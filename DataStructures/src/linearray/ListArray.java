@@ -1,12 +1,9 @@
 package linearray;
 
 public class ListArray<T> {
-	private int count;
+	int count;
 	T[] array;
 	private static final int N = 5;
-	public int getCount() {
-		return this.count;
-	}
 	protected ListArray(int n) {
 		this.array = (T[]) new Object[n];
 		this.count = 0;
