@@ -17,6 +17,7 @@ public class Test {
 		for(int i = 0; i<=10;i++) {
 			tst.enqueue(i);
 		}
+		tst.printQueue();
 		tst.dequeue();
 		tst.dequeue();
 		tst.printQueue();

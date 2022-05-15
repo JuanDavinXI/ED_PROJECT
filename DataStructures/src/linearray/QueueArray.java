@@ -43,6 +43,18 @@ public class QueueArray<T> extends ListArray<T> {
 		return super.array[((this.read-1)%super.array.length)];
 	}
 	public void printQueue() {
-		super.printList();
+		int pointer = this.read;
+		System.out.println("\n-------------\nFirst In");
+		System.out.print("[");
+		if(pointer==this.write) {
+			System.out.print(super.array[pointer]+" ");
+			pointer = (pointer+1)%super.array.length;
+		}
+		while(pointer!=this.write) {
+			System.out.print(super.array[pointer]+" ");
+			pointer = (pointer+1)%super.array.length;
+		}
+		System.out.println("]");
+		System.out.println("Last In\n-------------");
 	}
 }
