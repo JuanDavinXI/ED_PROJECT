@@ -20,6 +20,7 @@ public class QueueArray<T> extends ListArray<T> {
 		}
 		super.array[this.write] = item;
 		this.write = (this.write+1)%super.array.length;
+		super.count++;
 		return true;
 	}
 	public T peek() {
@@ -35,6 +36,13 @@ public class QueueArray<T> extends ListArray<T> {
 			return null;
 		}
 		this.read = (this.read+1)%super.array.length;
-		return super.array[(this.read-1)%super.array.length];
+		super.count--;
+		if((this.read-1)%super.array.length<0) {
+			return super.array[(this.read-1)%super.array.length+super.array.length];
+		}
+		return super.array[((this.read-1)%super.array.length)];
+	}
+	public void printQueue() {
+		super.printList();
 	}
 }
