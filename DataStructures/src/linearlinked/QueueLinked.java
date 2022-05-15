@@ -5,13 +5,13 @@ public class QueueLinked<T> extends LinkedListD<T> {
 		super();
 	}
 	public boolean enqueue(T item) {
-		return super.pushFront(item);
+		return super.pushBack(item);
 	}
 	public T dequeue() {
-		return super.popBack();
+		return super.popFront();
 	}
 	public T peek() {
-		return super.peekBack();
+		return super.peekFront();
 	}
 	public void printQueue() {
 		super.printList();
