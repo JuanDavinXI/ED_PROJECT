@@ -3,7 +3,7 @@ package linearlinked;
 public class LinkedListD<T> {
 	protected dNode<T> head;
 	dNode<T> tail;
-	int count;
+	public int count;
 	public LinkedListD() {
 		this.head = null;
 		this.tail = null;
@@ -37,7 +37,7 @@ public class LinkedListD<T> {
 	}
 	public T popFront() {
 		if(empty()) {
-			System.out.println("List is empty!");
+			//System.out.println("List is empty!");
 			return null;
 		}
 		dNode<T> ref = this.head;
@@ -53,7 +53,7 @@ public class LinkedListD<T> {
 	}
 	public T popBack() {
 		if(empty()) {
-			System.out.println("List is empty!");
+			//System.out.println("List is empty!");
 			return null;
 		}
 		dNode<T> ref = this.tail;
@@ -69,14 +69,14 @@ public class LinkedListD<T> {
 	}
 	public T peekFront() {
 		if(empty()) {
-			System.out.println("List is empty!");
+			//System.out.println("List is empty!");
 			return null;
 		}
 		return this.head.getData();
 	}
 	public T peekBack() {
 		if(empty()) {
-			System.out.println("List is empty!");
+			//System.out.println("List is empty!");
 			return null;
 		}
 		return this.tail.getData();

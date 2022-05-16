@@ -1,11 +1,12 @@
 package test;
-import java.util.Scanner;
+import java.util.*;
 import test.clothes.Clothes;
 
 public class Armario {
 	static Cajon<Clothes> camisas= new Cajon<Clothes>("Camisa");
 	static Cajon<Clothes> pantalones= new Cajon<Clothes>("Pantalon");
-	static Cajon<Clothes> Zapatos= new Cajon<Clothes>("Zapatos");	
+	static Cajon<Clothes> Zapatos= new Cajon<Clothes>("Zapatos");
+	static Cajon<Clothes>[] cajones= new Cajon[] {camisas,pantalones,Zapatos};
 	public static void main(String[] args) {
 		String window="actual";
 		System.out.println("Para tu cajon de de camisas ingresa 1\n"
@@ -31,6 +32,7 @@ public class Armario {
 				case "EXIT":
 					System.exit(-1);
 				case "Back":
+					Test.main(null);
 					break;
 				default:
 					System.out.println("Intentalo de nuevo");
