@@ -41,7 +41,12 @@ public class LinkedListD<T> {
 			return null;
 		}
 		dNode<T> ref = this.head;
-		this.head = this.head.getNext();
+		if(this.head==this.tail) {
+			this.head = this.tail = null;
+			this.count--;
+			return ref.data;
+		}
+		this.head = this.head.next;
 		this.head.prev = null;
 		this.count--;
 		return ref.getData();
@@ -52,6 +57,11 @@ public class LinkedListD<T> {
 			return null;
 		}
 		dNode<T> ref = this.tail;
+		if(this.tail==this.head) {
+			this.head = this.tail = null;
+			this.count--;
+			return ref.data;
+		}
 		this.tail = this.tail.prev;
 		this.tail.next = null;
 		this.count--;
