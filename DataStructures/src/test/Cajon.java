@@ -2,12 +2,11 @@ package test;
 
 import java.util.*;
 import linearlinked.LinkedListD;
+import linearlinked.QueueLinked;
 import linearlinked.dNode;
 import test.clothes.*;
 
-
-@SuppressWarnings("hiding")
-public class Cajon<T> extends LinkedListD<T> {
+public class Cajon<T> extends QueueLinked<T> {
 	public String type;
 	public Cajon(String Clothe){
 		type=Clothe;
