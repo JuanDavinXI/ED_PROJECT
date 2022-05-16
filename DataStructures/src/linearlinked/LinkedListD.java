@@ -1,7 +1,7 @@
 package linearlinked;
 
 public class LinkedListD<T> {
-	dNode<T> head;
+	protected dNode<T> head;
 	dNode<T> tail;
 	int count;
 	public LinkedListD() {
@@ -30,8 +30,8 @@ public class LinkedListD<T> {
 			return true;
 		}
 		this.tail.next = new dNode<T>(item);
-		this.tail.next.prev = this.tail;
-		this.tail = this.tail.next;
+		this.tail.getNext().prev = this.tail;
+		this.tail = this.tail.getNext();
 		this.count++;
 		return true;
 	}
@@ -49,7 +49,7 @@ public class LinkedListD<T> {
 		this.head = this.head.next;
 		this.head.prev = null;
 		this.count--;
-		return ref.data;
+		return ref.getData();
 	}
 	public T popBack() {
 		if(empty()) {
@@ -65,21 +65,21 @@ public class LinkedListD<T> {
 		this.tail = this.tail.prev;
 		this.tail.next = null;
 		this.count--;
-		return ref.data;
+		return ref.getData();
 	}
 	public T peekFront() {
 		if(empty()) {
 			System.out.println("List is empty!");
 			return null;
 		}
-		return this.head.data;
+		return this.head.getData();
 	}
 	public T peekBack() {
 		if(empty()) {
 			System.out.println("List is empty!");
 			return null;
 		}
-		return this.tail.data;
+		return this.tail.getData();
 	}
 	public void printList() {
 		if(empty()) {
@@ -90,8 +90,8 @@ public class LinkedListD<T> {
 		System.out.print("[ ");
 		dNode<T> ref = this.head;
 		while(ref != null) {
-			System.out.print(ref.data+" ");
-			ref = ref.next;
+			System.out.print(ref.getData()+" ");
+			ref = ref.getNext();
 		}
 		System.out.print("]");
 		System.out.println("");
@@ -100,4 +100,6 @@ public class LinkedListD<T> {
 	public void clearList() {
 		this.head = this.tail = null;
 	}
+	
+	
 }
