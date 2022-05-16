@@ -13,6 +13,13 @@ public class Test {
 		return array;
 	}	
 	public static void main(String[] args) {
+		Clothes[] subjects = testSubjects(10000);
+		long start = System.currentTimeMillis();
 		
+		//CODIGO A MEDIR EL TIEMPO
+		
+		long finish = System.currentTimeMillis();
+		finish = finish-start;
+		System.out.println("Tiempo de operación: "+finish);
 	}
 }
