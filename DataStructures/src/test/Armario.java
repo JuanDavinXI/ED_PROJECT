@@ -11,7 +11,8 @@ public class Armario {
 		String window="actual";
 		System.out.println("Para tu cajon de de camisas ingresa 1\n"
 				+ "Para tu cajon de de Pantalones ingresa 2\n"
-				+ "Para tu cajon de de Zapatos ingresa 3");
+				+ "Para tu cajon de de Zapatos ingresa 3\n"
+				  +"Para devolverte ingresa 'Back'");
 		while(window.compareTo("actual")==0) {
 			step();
 		}
