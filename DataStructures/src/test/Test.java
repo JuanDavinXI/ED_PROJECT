@@ -1,20 +1,13 @@
 package test;
-import java.util.*;
-import test.clothes.Clothes;
-public class Test {
-	public static Clothes[] testSubjects(int size) {
-		Clothes[] array = new Clothes[size];
-		String[] types = {"Camisa","Pantalon","Zapatos"};
-		Random rndm = new Random();
-		for(int i = 0; i<size; i++) {
-			int random = rndm.nextInt(3);
-			array[i] = new Clothes(Integer.toString(i),types[random]);
-		}
-		return array;
-	}	
-	public static void main(String[] args) {
 
-    Scanner in=new Scanner(System.in);
+import java.util.*;
+
+import test.clothes.Clothes;
+
+public class Test {
+	static Armario armario= new Armario();	
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
 		while(true) {
 			if(Armario.camisas.peek()==null) {
 				System.out.println("Camisa: "+"No hay prendas de este tipo en tu armario");
@@ -123,4 +116,3 @@ public class Test {
 }	
 			
 			
-
